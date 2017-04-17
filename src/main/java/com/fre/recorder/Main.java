@@ -6,6 +6,7 @@ import java.nio.ByteOrder;
 import org.monte.media.Format;
 import org.monte.media.math.Rational;
 import org.monte.screenrecorder.ScreenRecorder;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.monte.media.AudioFormatKeys.*;
 import static org.monte.media.AudioFormatKeys.MIME_QUICKTIME;
@@ -26,6 +27,13 @@ public class Main {
   private ScreenRecorder screenRecorder;
 
   public static void main(String[] args) throws Exception {
+
+    System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
+
+    ChromeDriver driver = new ChromeDriver();
+
+    driver.get("http://www.google.com");
+
     new Main().startRecording();
   }
 
